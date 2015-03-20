@@ -6,7 +6,7 @@
 			"guest_os_type": "Ubuntu_64",
 			"iso_urls": [
 				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso",
-				"http://nl.releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso"
+				"http://us.releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso"
 			],
 			"iso_checksum": "01545fa976c8367b4f0d59169ac4866c",
 			"iso_checksum_type": "md5",
@@ -35,7 +35,7 @@
 			"guest_os_type": "Ubuntu",
 			"iso_urls": [
 				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso",
-				"http://nl.releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso"
+				"http://us.releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso"
 			],
 			"iso_checksum": "08d25bf879e353686a974b7b14ae7d81",
 			"iso_checksum_type": "md5",
@@ -59,12 +59,78 @@
 			"hard_drive_interface": "sata"
 		},
 		{
+			"name": "ubuntu-14.04.i386.parallels",
+			"type": "parallels-iso",
+			"guest_os_type": "ubuntu",
+			"iso_urls": [
+				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso",
+				"http://us.releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso"
+			],
+			"iso_checksum": "08d25bf879e353686a974b7b14ae7d81",
+			"iso_checksum_type": "md5",
+			"ssh_username": "vagrant",
+			"ssh_password": "vagrant",
+			"http_directory": "../http/ubuntu/",
+			"headless": true,
+			"boot_wait": "5s",
+			"boot_command": [
+				"<esc><esc><enter><wait>",
+				"/install/vmlinuz ",
+				"preseed/url=http://{{.HTTPIP}}:{{.HTTPPort}}/preseed.cfg ",
+				"debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+				"hostname={{.Name}} ",
+				"fb=false debconf/frontend=noninteractive ",
+				"keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+				"keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+				"initrd=/install/initrd.gz -- <enter>"
+			],
+			"shutdown_command": "echo 'vagrant' | sudo -S -E shutdown -P now",
+            "parallels_tools_flavor": "mac",
+            "prlctl": [
+                  ["set", "{{.Name}}", "--memsize", "1024"],
+                  ["set", "{{.Name}}", "--cpus", "2"]
+            ]
+		},
+		{
+			"name": "ubuntu-14.04.amd64.parallels",
+			"type": "parallels-iso",
+			"guest_os_type": "ubuntu",
+			"iso_urls": [
+				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso",
+				"http://us.releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso"
+			],
+			"iso_checksum": "01545fa976c8367b4f0d59169ac4866c",
+			"iso_checksum_type": "md5",
+			"ssh_username": "vagrant",
+			"ssh_password": "vagrant",
+			"http_directory": "../http/ubuntu/",
+			"headless": true,
+			"boot_wait": "5s",
+			"boot_command": [
+				"<esc><esc><enter><wait>",
+				"/install/vmlinuz ",
+				"preseed/url=http://{{.HTTPIP}}:{{.HTTPPort}}/preseed.cfg ",
+				"debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+				"hostname={{.Name}} ",
+				"fb=false debconf/frontend=noninteractive ",
+				"keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+				"keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+				"initrd=/install/initrd.gz -- <enter>"
+			],
+			"shutdown_command": "echo 'vagrant' | sudo -S -E shutdown -P now",
+            "parallels_tools_flavor": "mac",
+            "prlctl": [
+                  ["set", "{{.Name}}", "--memsize", "1024"],
+                  ["set", "{{.Name}}", "--cpus", "2"]
+            ]
+		},
+		{
 			"name": "ubuntu-14.04.amd64.vmware",
 			"type": "vmware-iso",
 			"guest_os_type": "ubuntu-64",
 			"iso_urls": [
 				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso",
-				"http://nl.releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso"
+				"http://us.releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso"
 			],
 			"iso_checksum": "01545fa976c8367b4f0d59169ac4866c",
 			"iso_checksum_type": "md5",
@@ -101,7 +167,7 @@
 			"guest_os_type": "ubuntu",
 			"iso_urls": [
 				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso",
-				"http://nl.releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso"
+				"http://us.releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso"
 			],
 			"iso_checksum": "08d25bf879e353686a974b7b14ae7d81",
 			"iso_checksum_type": "md5",
@@ -154,6 +220,26 @@
 						"../script/ubuntu/network.sh",
 						"../script/common/vagrant.sh",
 						"../script/common/virtualbox.sh",
+						"../script/common/motd.sh",
+						"../script/ubuntu/cleanup.sh"
+					]
+				},
+				"ubuntu-14.04.amd64.parallels": {
+					"scripts": [
+						"../script/ubuntu/update.sh",
+						"../script/ubuntu/network.sh",
+						"../script/common/vagrant.sh",
+						"../script/common/parallels.sh",
+						"../script/common/motd.sh",
+						"../script/ubuntu/cleanup.sh"
+					]
+				},
+				"ubuntu-14.04.i386.parallels": {
+					"scripts": [
+						"../script/ubuntu/update.sh",
+						"../script/ubuntu/network.sh",
+						"../script/common/vagrant.sh",
+						"../script/common/parallels.sh",
 						"../script/common/motd.sh",
 						"../script/ubuntu/cleanup.sh"
 					]
