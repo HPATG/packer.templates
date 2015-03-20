@@ -11,3 +11,7 @@ rm -rf /tmp/*
 # Zero out free space
 dd if=/dev/zero of=/EMPTY bs=1M
 rm -f /EMPTY
+
+sleep 10
+echo "Cleaned Up"
+df -h

@@ -6,7 +6,7 @@
 			"guest_os_type": "Ubuntu_64",
 			"iso_urls": [
 				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso",
-				"http://nl.releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso"
+				"http://us.releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso"
 			],
 			"iso_checksum": "01545fa976c8367b4f0d59169ac4866c",
 			"iso_checksum_type": "md5",
@@ -35,7 +35,7 @@
 			"guest_os_type": "Ubuntu",
 			"iso_urls": [
 				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso",
-				"http://nl.releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso"
+				"http://us.releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso"
 			],
 			"iso_checksum": "08d25bf879e353686a974b7b14ae7d81",
 			"iso_checksum_type": "md5",
@@ -64,7 +64,7 @@
 			"guest_os_type": "ubuntu",
 			"iso_urls": [
 				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso",
-				"http://nl.releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso"
+				"http://us.releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso"
 			],
 			"iso_checksum": "08d25bf879e353686a974b7b14ae7d81",
 			"iso_checksum_type": "md5",
@@ -97,7 +97,7 @@
 			"guest_os_type": "ubuntu",
 			"iso_urls": [
 				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso",
-				"http://nl.releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso"
+				"http://us.releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso"
 			],
 			"iso_checksum": "01545fa976c8367b4f0d59169ac4866c",
 			"iso_checksum_type": "md5",
@@ -130,7 +130,7 @@
 			"guest_os_type": "ubuntu-64",
 			"iso_urls": [
 				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso",
-				"http://nl.releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso"
+				"http://us.releases.ubuntu.com/14.04/ubuntu-14.04-server-amd64.iso"
 			],
 			"iso_checksum": "01545fa976c8367b4f0d59169ac4866c",
 			"iso_checksum_type": "md5",
@@ -167,7 +167,7 @@
 			"guest_os_type": "ubuntu",
 			"iso_urls": [
 				"http://releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso",
-				"http://nl.releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso"
+				"http://us.releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso"
 			],
 			"iso_checksum": "08d25bf879e353686a974b7b14ae7d81",
 			"iso_checksum_type": "md5",
